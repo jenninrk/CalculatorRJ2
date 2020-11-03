@@ -15,5 +15,9 @@ class Calculator:
     def squared(self, x):
         return int(x) ** 2
 
+    def sqrt(self, x):
+        return float(x) ** (1 / 2)
+
+
 
 
