@@ -33,7 +33,7 @@ class MyTestCase(unittest.TestCase):
 
         test_data_row_list = list()
 
-        with open('./src//test.csv') as csv_file:
+        with open('./src//plus_test.csv') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             for row in csv_reader:
                 test_data_row_list.append(row)
