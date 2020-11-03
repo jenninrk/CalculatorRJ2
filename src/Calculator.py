@@ -12,3 +12,8 @@ class Calculator:
     def divide(self, x, y):
         return float(x) / float(y)
 
+    def squared(self, x):
+        return int(x) ** 2
+
+
+

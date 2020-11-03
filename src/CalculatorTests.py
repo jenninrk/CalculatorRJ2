@@ -110,6 +110,25 @@ class MyTestCase(unittest.TestCase):
             print(str(x) + ' / ' + str(y) + ' = ' + str(result) + ', expect ' + str(expect_result))
             self.assertEqual(round(float(result),9), float(expect_result))
 
+    def test_squared(self):
+
+        test_data_row_list = list()
+
+        with open('./src//squared_test.csv') as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            for row in csv_reader:
+                test_data_row_list.append(row)
+                # print(','.join(row))
+        print('')
+        print('******test_squared******')
+        # print(','.join(row))
+        for row in test_data_row_list:
+            x = row[0]
+            expect_result = row[1]
+            result = self.calculator.squared(x)
+            print(str(x) + ' ** ' + ' = ' + str(result) + ', expect ' + str(expect_result))
+            self.assertEqual(int(result), int(expect_result))
+
 
 if __name__ == '__main__':
     unittest.main()
