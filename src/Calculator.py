@@ -8,3 +8,7 @@ class Calculator:
 
     def multiply(self, x, y):
         return int(x) * int(y)
+
+    def divide(self, x, y):
+        return float(x) / float(y)
+
