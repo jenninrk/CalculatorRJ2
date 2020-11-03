@@ -49,6 +49,26 @@ class MyTestCase(unittest.TestCase):
             print(str(x) + ' + ' + str(y) + ' = ' + str(result) + ', expect ' + str(expect_result))
             self.assertEqual(int(result), int(expect_result))
 
+    def test_minus(self):
+
+        test_data_row_list = list()
+
+        with open('./src//minus_test.csv') as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            for row in csv_reader:
+                test_data_row_list.append(row)
+                # print(','.join(row))
+        print('')
+        print('******test_minus******')
+        # print(','.join(row))
+        for row in test_data_row_list:
+            x = row[1]
+            y = row[0]
+            expect_result = row[2]
+            result = self.calculator.minus(x, y)
+            print(str(x) + ' - ' + str(y) + ' = ' + str(result) + ', expect ' + str(expect_result))
+            self.assertEqual(int(result), int(expect_result))
+
 
 if __name__ == '__main__':
     unittest.main()
