@@ -5,3 +5,6 @@ class Calculator:
 
     def minus(self, x, y):
         return int(x) - int(y)
+
+    def multiply(self, x, y):
+        return int(x) * int(y)

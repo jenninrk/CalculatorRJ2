@@ -70,5 +70,26 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(int(result), int(expect_result))
 
 
+    def test_multiply(self):
+
+        test_data_row_list = list()
+
+        with open('./src//multiply_test.csv') as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            for row in csv_reader:
+                test_data_row_list.append(row)
+                # print(','.join(row))
+        print('')
+        print('******test_multiply******')
+        # print(','.join(row))
+        for row in test_data_row_list:
+            x = row[0]
+            y = row[1]
+            expect_result = row[2]
+            result = self.calculator.multiply(x, y)
+            print(str(x) + ' * ' + str(y) + ' = ' + str(result) + ', expect ' + str(expect_result))
+            self.assertEqual(int(result), int(expect_result))
+
+
 if __name__ == '__main__':
     unittest.main()
